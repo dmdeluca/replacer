@@ -1,0 +1,21 @@
+{
+    "files": [
+        {
+            "path": "c:\\users\\dd4235\\source\\repos\\main-current2\\development\\profitect\\webclient\\src\\app\\config\\config.json",
+            "replacements": [
+                {
+                    "target": "81",
+                    "replace": "80"
+                },
+                {
+                    "target": "dev-next.profitect.com",
+                    "replace": "localhost"
+                },
+                {
+                    "target": "https",
+                    "replace": "http"
+                }
+            ]
+        }
+    ]
+}

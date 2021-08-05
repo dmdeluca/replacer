@@ -1,0 +1,40 @@
+{
+    "files": [
+        {
+            "path": "c:\\users\\dd4235\\source\\repos\\main-current2\\development\\profitect\\Profitect.ServiceBus\\ServiceManager\\ServiceBusManager.Host.cs",
+            "replacements": [
+                {
+                    "target": "var certName = ConfigurationContext.SingleInstance[ConfigurationHelper.CONFIG_KEY_X509_CERTIFICATE_NAME].ConfigurationValue;",
+                    "replace": "var certName = \"0137W-DD4235.zebra.lan\"; ServiceBusManager.DevModulesOverride.Add(\"Inventory\");ServiceBusManager.DevModulesOverride.Add(\"PlanningAndBuying\"); ServiceBusManager.DevModulesOverride.Add(\"DnR\");ServiceBusManager.DevModulesOverride.Add(\"Marketing\");"
+                }
+            ]
+        },
+        {
+            "path": "c:\\users\\dd4235\\source\\repos\\main-current2\\development\\profitect\\Profitect.ServiceBus\\ServiceManager\\ServiceBusManager.CAP.cs",
+            "replacements": [
+                {
+                    "pattern": "return new XElement\\(\"access-policy\",[^;]*\\);",
+                    "replace": "return new XElement(\"access-policy\",new XElement(\"cross-domain-access\",new XElement(\"policy\",new XElement(\"allow-from\", new XAttribute(\"http-request-headers\",\"*\"),new XElement(\"domain\", new XAttribute(\"uri\",\"http://*\")), new XElement(\"domain\", new XAttribute(\"uri\",\"https://*\")), new XElement(\"domain\", new XAttribute(\"uri\",\"file://*\")), new XElement(\"domain\", new XAttribute(\"uri\",\"*\"))),new XElement(\"grant-to\",new XElement(\"resource\", new XAttribute(\"path\",\"/\"), new XAttribute(\"include-subpaths\",\"true\"))))));"
+                }
+            ]
+        },
+        {
+            "path": "C:\\Users\\DD4235\\Source\\Repos\\Main-Current2\\Development\\Profitect\\Silverlight\\Profitect.UI.Web\\Default.html",
+            "replacements": [
+                {
+                    "pattern": "ServiceBusAddress=[^\"]*",
+                    "replace": "ServiceBusAddress=https://0137w-dd4235.zebra.lan:9999/Profitect/ServiceBus,sbversion=0.0.0.0"
+                }
+            ]
+        },
+        {
+            "path": "c:\\users\\dd4235\\source\\repos\\main-current2\\development\\profitect\\WebApi\\Profitect.WebApi\\appsettings.DEVELOPMENT.json",
+            "replacements": [
+                {
+                    "pattern": "\"SBBaseUrl\": \".*\"",
+                    "replace": "\"SBBaseUrl\": \"https://0137w-dd4235.zebra.lan:9999/profitect/ServiceBus\""
+                }
+            ]
+        }
+    ]
+}
